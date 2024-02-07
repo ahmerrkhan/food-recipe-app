@@ -4,11 +4,10 @@ import 'package:food_recipe_app/screens/nav/bottom_nav_screen.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:hive/hive.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   var dir = await getApplicationDocumentsDirectory();
- // await Hive.init(dir.path);
+  // await Hive.init(dir.path);
   //await Hive.openBox('Favorite');
   runApp(const MyApp());
 }
@@ -18,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: 'Satoshi',
         primarySwatch: Colors.blue,
