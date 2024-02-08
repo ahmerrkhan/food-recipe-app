@@ -12,7 +12,6 @@ import 'similar_list.dart';
 
 import 'appbar.dart';
 
-
 class RacipeInfoWidget extends StatefulWidget {
   final Recipe info;
   final List<Similar> similarlist;
@@ -88,9 +87,7 @@ class _RacipeInfoWidgetState extends State<RacipeInfoWidget> {
                               flex: 1,
                               child: Column(
                                 children: [
-                                  Text(
-                                      widget.info.readyInMinutes.toString() +
-                                          " Min",
+                                  Text("${widget.info.readyInMinutes} Min",
                                       style: const TextStyle(
                                           fontWeight: FontWeight.bold,
                                           fontSize: 20)),
@@ -151,7 +148,7 @@ class _RacipeInfoWidgetState extends State<RacipeInfoWidget> {
                   const Padding(
                     padding: EdgeInsets.all(26.0),
                     child: DelayedDisplay(
-                      delay: const Duration(microseconds: 700),
+                      delay: Duration(microseconds: 700),
                       child: Text(
                         "Ingredients",
                         style: TextStyle(
@@ -167,29 +164,20 @@ class _RacipeInfoWidgetState extends State<RacipeInfoWidget> {
                       ),
                     ),
                   if (widget.info.instructions != null)
-                    Padding(
-                      padding: const EdgeInsets.all(26.0),
+                    const Padding(
+                      padding: EdgeInsets.all(26.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Instructions",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                             ),
                           ),
-                          const SizedBox(height: 20),
-                          // Html(
-                          //   data: widget.info.instructions,
-                          //   style: {
-                          //     'p': Style(
-                          //       fontSize: FontSize.large,
-                          //       color: Colors.black,
-                          //     ),
-                          //   },
-                          // ),
+                          SizedBox(height: 20),
                         ],
                       ),
                     ),
@@ -207,23 +195,19 @@ class _RacipeInfoWidgetState extends State<RacipeInfoWidget> {
                       equipments: widget.equipment,
                     ),
                   if (widget.info.summary != null)
-                    Padding(
-                      padding: const EdgeInsets.all(26.0),
+                    const Padding(
+                      padding: EdgeInsets.all(26.0),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.start,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text(
+                          Text(
                             "Quick summary",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 20,
                             ),
                           ),
-                          const SizedBox(height: 20),
-                          // Html(
-                          //   data: widget.info.summary,
-                          // ),
                         ],
                       ),
                     ),

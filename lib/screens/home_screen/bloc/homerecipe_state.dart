@@ -1,4 +1,3 @@
-
 import 'package:food_recipe_app/models/failure.dart';
 import 'package:food_recipe_app/models/food_type.dart';
 

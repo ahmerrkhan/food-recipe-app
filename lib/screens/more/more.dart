@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_recipe_app/screens/random_recipe/widgets/expandable.dart';
 
+
+///More Screen is basically App Info Page in Bottom Nav Bar
 class More extends StatelessWidget {
   const More({Key? key}) : super(key: key);
 
@@ -13,9 +15,8 @@ class More extends StatelessWidget {
           elevation: 0,
           iconTheme: const IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
-          title: Text(
+          title: const Text(
             "Spoonacular",
-            style: Theme.of(context).textTheme.headline1,
           ),
         ),
         body: ListView(
@@ -44,7 +45,7 @@ class More extends StatelessWidget {
             ),
             ExpandableGroup(
               isExpanded: false,
-              collapsedIcon: Icon(Icons.arrow_drop_down),
+              collapsedIcon: const Icon(Icons.arrow_drop_down),
               header: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Text(
@@ -92,7 +93,7 @@ class More extends StatelessWidget {
             ),
             ExpandableGroup(
               isExpanded: false,
-              collapsedIcon: Icon(Icons.arrow_drop_down),
+              collapsedIcon: const Icon(Icons.arrow_drop_down),
               header: const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.0),
                 child: Text(

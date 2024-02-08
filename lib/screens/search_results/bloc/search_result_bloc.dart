@@ -1,5 +1,4 @@
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
 import 'package:food_recipe_app/models/failure.dart';
 import 'package:food_recipe_app/repo/get_search_results.dart';
 import 'package:food_recipe_app/screens/search_results/bloc/search_result_event.dart';
@@ -14,6 +13,7 @@ class SearchResultsBloc extends Bloc<SearchResultsEvent, SearchResultsState> {
         try {
           emit(SearchResultsLoading());
           final results = await repo.getSearchList(event.name, 100);
+          ///Emitting Search Success Result
           emit(SearchResultsSuccess(
             results: results.list,
           ));

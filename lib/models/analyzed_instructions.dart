@@ -6,6 +6,8 @@ class AnalyzedInstruction {
 
   AnalyzedInstruction({this.name, this.steps});
 
+  ///Using factory Method to parse toJson and fromJson
+
   factory AnalyzedInstruction.fromJson(json) {
     return AnalyzedInstruction(
       name: json['name'] as String?,

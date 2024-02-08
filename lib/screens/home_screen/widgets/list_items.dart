@@ -6,7 +6,6 @@ import 'package:food_recipe_app/models/food_type.dart';
 import 'package:food_recipe_app/screens/recipe_info/bloc/recipe_info_bloc.dart';
 import 'package:food_recipe_app/screens/recipe_info/recipe_info_screen.dart';
 
-
 class ListItem extends StatefulWidget {
   final FoodType meal;
   const ListItem({
@@ -91,7 +90,7 @@ class _Listmealtate extends State<ListItem> {
                 Flexible(
                   flex: 2,
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,

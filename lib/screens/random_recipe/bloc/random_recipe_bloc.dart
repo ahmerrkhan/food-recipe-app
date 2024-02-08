@@ -1,8 +1,7 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:food_recipe_app/models/failure.dart';
 import 'package:food_recipe_app/models/recipe.dart';
 import 'package:food_recipe_app/repo/get_random_recipe.dart';
-import 'package:meta/meta.dart';
 import '../../../models/equipment.dart';
 import '../../../models/nutrients.dart';
 import '../../../models/similar_list.dart';
@@ -19,6 +18,7 @@ class RandomRecipeBloc extends Bloc<RandomRecipeEvent, RandomRecipeState> {
         try {
           emit(RandomRecipeLoadState());
           final data = await repo.getRecipe();
+          ///emitting Random Recipe Success to UI
           emit(
             RandomRecipeSuccesState(
               recipe: data[0],

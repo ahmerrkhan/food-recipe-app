@@ -1,6 +1,5 @@
 part of 'recipe_info_bloc.dart';
 
-@immutable
 abstract class RecipeInfoState {}
 
 class RecipeInfoInitial extends RecipeInfoState {}

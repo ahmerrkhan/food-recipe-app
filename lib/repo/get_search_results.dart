@@ -1,16 +1,13 @@
-import 'dart:convert';
-import 'dart:math';
-
 import 'package:dio/dio.dart';
 import 'package:food_recipe_app/api/api_keys.dart';
 import 'package:food_recipe_app/models/auto_complete.dart';
 import 'package:food_recipe_app/models/failure.dart';
 import 'package:food_recipe_app/models/search_results.dart';
 
-
 class SearchRepo {
   var key = ApiKey.keys;
 
+  ///Network Calling to get searched query from Spoonacular api
   Future<SearchResultList> getSearchList(String type, int no) async {
     var url =
         'https://api.spoonacular.com/recipes/complexSearch?query=$type&number=$no&apiKey=${key}';
@@ -27,6 +24,8 @@ class SearchRepo {
     }
   }
 
+  ///Network Call for auto complete search
+  ///Same as returning a search delegate in flutter
   Future<SearchAutoCompleteList> getAutoCompleteList(String searchText) async {
     var url =
         'https://api.spoonacular.com/recipes/autocomplete?number=100&query=$searchText&apiKey=${key}';

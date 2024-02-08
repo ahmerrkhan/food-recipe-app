@@ -22,6 +22,7 @@ class HomeRecipesBloc extends Bloc<HomeRecipesEvent, HomeRecipesState> {
             repo.getRecipes('cake', 20),
             repo.getRecipes('rice', 20),
           ]);
+          ///Emitting Home Recipe List from bloc
           emit(
             HomeRecipesSuccess(
               breakfast: data[0].list,

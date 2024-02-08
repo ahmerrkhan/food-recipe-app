@@ -2,6 +2,8 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../../../models/equipment.dart';
 
+
+///Displaying Widget for Equipments List
 class EquipmentsListView extends StatelessWidget {
   final List<Equipment> equipments;
 

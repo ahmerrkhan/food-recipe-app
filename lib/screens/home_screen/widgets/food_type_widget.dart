@@ -115,7 +115,7 @@ class _RecipeCardTypeState extends State<RecipeCardType> {
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                     child: Text(
                       "Ready in " + widget.items.readyInMinutes + " Min",
                       style: TextStyle(

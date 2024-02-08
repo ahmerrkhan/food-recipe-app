@@ -24,21 +24,14 @@ class GetRecipeInfo {
 
   final dio = Dio();
 
+  ///Network Calling to get recipes info from Spoonacular api
   Future<List<dynamic>> getRecipeInfo(String id) async {
-    var infoUrl = BASE_URL +
-        id +
-        INFORMATION_PATH +
-        '&apiKey=' +
-        key;
+    var infoUrl = '$BASE_URL$id$INFORMATION_PATH&apiKey=$key';
     var similarUrl =
-        BASE_URL + id + SIMILAR_PATH + '&apiKey=' + key;
-    var equipmentUrl = BASE_URL +
-        id +
-        EQUIPMENTS_PATH +
-        '&apiKey=' +
-        key;
+        '$BASE_URL$id$SIMILAR_PATH&apiKey=$key';
+    var equipmentUrl = '$BASE_URL$id$EQUIPMENTS_PATH&apiKey=$key';
     var nutritionUrl =
-        BASE_URL + id + NUTRITION_PATH + '&apiKey=' + key;
+        '$BASE_URL$id$NUTRITION_PATH&apiKey=$key';
 
     Recipe racipeInfo;
     SimilarList similarList;

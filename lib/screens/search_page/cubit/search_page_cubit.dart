@@ -1,9 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:equatable/equatable.dart';
-import 'package:food_recipe_app/models/auto_complete.dart';
 import 'package:food_recipe_app/repo/get_search_results.dart';
 import 'package:food_recipe_app/screens/search_page/cubit/search_page_state.dart';
-import 'package:meta/meta.dart';
 
 
 class SearchPageCubit extends Cubit<SearchPageState> {

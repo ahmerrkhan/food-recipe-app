@@ -71,16 +71,14 @@ class _ExpandableGroupState extends State<ExpandableGroup> {
   Widget _wrapHeader() {
     List<Widget> children = [];
     if (!widget.isExpanded) {
-      children.add(Divider());
+      children.add(const Divider());
     }
     children.add(ListTile(
-      contentPadding: widget.headerEdgeInsets != null
-          ? widget.headerEdgeInsets
-          : EdgeInsets.only(left: 0.0, right: 16.0),
+      contentPadding: widget.headerEdgeInsets ?? const EdgeInsets.only(left: 0.0, right: 16.0),
       title: widget.header,
       trailing: _isExpanded
-          ? widget.expandedIcon ?? Icon(Icons.keyboard_arrow_down)
-          : widget.collapsedIcon ?? Icon(Icons.keyboard_arrow_right),
+          ? widget.expandedIcon ?? const Icon(Icons.keyboard_arrow_down)
+          : widget.collapsedIcon ?? const Icon(Icons.keyboard_arrow_right),
       onTap: () => _updateExpandState(!_isExpanded),
     ));
     return Ink(

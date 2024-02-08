@@ -1,3 +1,4 @@
+///Similar List Model : for showing in horizontal lsit view
 class Similar {
   final String id;
   final String name;

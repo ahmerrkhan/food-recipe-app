@@ -1,3 +1,4 @@
+///Ingredients Model
 class Ingredient {
   int? id;
   String? name;

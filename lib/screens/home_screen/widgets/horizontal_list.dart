@@ -11,10 +11,10 @@ class HorizontalList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Row(
-        children: const [
+        children: <Widget> [
           SizedBox(width: 10),
           ChipWidget("Drinks"),
           ChipWidget("Baking"),

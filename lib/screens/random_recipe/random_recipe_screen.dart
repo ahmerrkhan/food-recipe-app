@@ -15,6 +15,7 @@ class _RandomRecipeState extends State<RandomRecipe> {
   late final RandomRecipeBloc bloc;
   @override
   void initState() {
+    ///Getting RandomRecipe Bloc on re rendering UI
     bloc = BlocProvider.of<RandomRecipeBloc>(context);
     bloc.add(LoadRandomRecipe());
     super.initState();
@@ -31,6 +32,7 @@ class _RandomRecipeState extends State<RandomRecipe> {
             if (state is RandomRecipeLoadState) {
               return const Center(child: LoadingWidget());
             } else if (state is RandomRecipeSuccesState) {
+              ///On Success
               return RacipeInfoWidget(
                 equipment: state.equipment,
                 info: state.recipe,
@@ -38,16 +40,13 @@ class _RandomRecipeState extends State<RandomRecipe> {
                 similarlist: state.similar,
               );
             } else if (state is RandomRecipeErrorState) {
-              return Center(
-                child: Container(
-                  child: Text("Error"),
-                ),
+              ///On Failure
+              return const Center(
+                child: Text("Error"),
               );
             } else {
-              return Center(
-                child: Container(
-                  child: Text("Noting happingng"),
-                ),
+              return const Center(
+                child: Text("Nothing happens"),
               );
             }
           },

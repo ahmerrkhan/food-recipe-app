@@ -46,6 +46,8 @@ class _RecipeCardWidgetState extends State<RecipeCardWidget> {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
+
+        ///Navigating to Recipe Info Screen (Detail Screen)
         Navigator.of(context).push(MaterialPageRoute(
             builder: (context) => BlocProvider(
                   create: (context) => RecipeInfoBloc(),
@@ -113,7 +115,7 @@ class _RecipeCardWidgetState extends State<RecipeCardWidget> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                 child: Text(
-                  "Ready in " + widget.items.readyInMinutes + " Min",
+                  "Ready in ${widget.items.readyInMinutes} Min",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).primaryColor,

@@ -37,9 +37,8 @@ class _SearchResultsState extends State<SearchResults> {
           elevation: 0,
           iconTheme: const IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
-          title: Text(
+          title: const Text(
             "Spoonacular",
-            style: Theme.of(context).textTheme.headline1,
           ),
         ),
         body: BlocBuilder<SearchResultsBloc, SearchResultsState>(
@@ -47,35 +46,34 @@ class _SearchResultsState extends State<SearchResults> {
             if (state is SearchResultsLoading) {
               return const Center(child: LoadingWidget());
             } else if (state is SearchResultsSuccess) {
-              return Container(
-                  child: SafeArea(
-                      child: Padding(
+              ///Displaying On Success result
+              return SafeArea(
+                  child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: GridView(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    childAspectRatio: 13 / 16,
-                  ),
-                  physics: const BouncingScrollPhysics(
-                      parent: AlwaysScrollableScrollPhysics()),
-                  children: [
-                    ...state.results.map((result) {
-                      return SearchResultItem(
-                        result: result,
-                      );
-                    }).toList()
-                  ],
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 13 / 16,
+              ),
+              physics: const BouncingScrollPhysics(
+                  parent: AlwaysScrollableScrollPhysics()),
+              children: [
+                ...state.results.map((result) {
+                  return SearchResultItem(
+                    result: result,
+                  );
+                }).toList()
+              ],
                 ),
-              )));
+              ));
             } else if (state is SearchResultsError) {
+              //On Error
               return const Center(
                 child: Text("Error"),
               );
             } else {
-              return Center(
-                child: Container(
-                  child: Text("Noting happingng"),
-                ),
+              return const Center(
+                child: Text("Nothing happens"),
               );
             }
           },

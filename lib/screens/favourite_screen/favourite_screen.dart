@@ -1,9 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:food_recipe_app/models/food_type.dart';
-import 'package:food_recipe_app/models/recipe.dart';
-import 'package:food_recipe_app/screens/home_screen/widgets/list_items.dart';
-import 'package:hive/hive.dart';
 
 class FavoriteScreen extends StatelessWidget {
   const FavoriteScreen({Key? key}) : super(key: key);
@@ -17,15 +13,14 @@ class FavoriteScreen extends StatelessWidget {
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.white,
-          title: Text(
+          title: const Text(
             "Spoonacular",
-            style: Theme.of(context).textTheme.headline1,
           ),
         ),
-        body: Center(
+        body: const Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: const [
+            children: <Widget> [
               Icon(
                 CupertinoIcons.heart_fill,
                 size: 105,

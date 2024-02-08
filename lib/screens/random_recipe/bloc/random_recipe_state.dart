@@ -1,6 +1,5 @@
 part of 'random_recipe_bloc.dart';
 
-@immutable
 abstract class RandomRecipeState {}
 
 class RandomRecipeInitial extends RandomRecipeState {}

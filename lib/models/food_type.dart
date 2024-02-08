@@ -1,3 +1,4 @@
+///Food Type Model
 class FoodType {
   final String id;
   final String name;

@@ -18,9 +18,6 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
   @override
   Widget build(
       BuildContext context, double shrinkOffset, bool overlapsContent) {
-    final appBarSize = maxExtent - shrinkOffset;
-    final proportion = 2 - (maxExtent / appBarSize);
-    final percent = proportion < 0 || proportion > 1 ? 0.0 : proportion;
     return ConstrainedBox(
       constraints: BoxConstraints(minHeight: maxExtent),
       child: Stack(
@@ -135,39 +132,6 @@ class AppBarWidget extends StatefulWidget {
 }
 
 class _AppBarWidgetState extends State<AppBarWidget> {
-  // Future<Uri> data() async {
-  //   final DynamicLinkParameters parameters = DynamicLinkParameters(
-  //     uriPrefix: 'https://newapp2222.page.link/',
-  //     link: Uri.parse(
-  //         'https://ansh-rathod-blog.netlify.app/?id=${widget.info.id}'),
-  //     androidParameters: AndroidParameters(
-  //       packageName: 'com.example.android',
-  //       minimumVersion: 125,
-  //     ),
-  //     googleAnalyticsParameters: GoogleAnalyticsParameters(
-  //       campaign: 'example-promo',
-  //       medium: 'social',
-  //       source: 'orkut',
-  //     ),
-  //     socialMetaTagParameters: SocialMetaTagParameters(
-  //       title: widget.info.title,
-  //       description: widget.info.summary,
-  //       imageUrl: Uri.parse(widget.info.image!),
-  //     ),
-  //   );
-
-  //   final Uri dynamicUrl = await parameters.buildUrl();
-  //   final ShortDynamicLink shortenedLink =
-  //       await DynamicLinkParameters.shortenUrl(
-  //     dynamicUrl,
-  //     DynamicLinkParametersOptions(
-  //         shortDynamicLinkPathLength: ShortDynamicLinkPathLength.unguessable),
-  //   );
-
-  //   final Uri shortUrl = shortenedLink.shortUrl;
-  //   return shortUrl;
-  // }
-
   @override
   Widget build(BuildContext context) {
     return AppBar(
@@ -193,19 +157,14 @@ class _AppBarWidgetState extends State<AppBarWidget> {
       actions: [
         IconButton(
           onPressed: () async {
-            // final url = await data();
-            // Share.share(
-            //   'check out This tasty recipe $url',
-            // );
           },
           icon: const Icon(CupertinoIcons.share, color: Colors.black),
         )
       ],
       title: Opacity(
         opacity: (0 + widget.shrinkOffset / widget.expandedHeight),
-        child: Text(
+        child: const Text(
           "Spoonacular",
-          style: Theme.of(context).textTheme.headline1,
         ),
       ),
     );

@@ -30,6 +30,8 @@ class _BottomNavViewState extends State<BottomNavView> {
     const FavoriteScreen(),
     const More(),
   ];
+
+  ///Bottom Navigation Bar Childrens
   List<PersistentBottomNavBarItem> _navBarsItems() {
     return [
       PersistentBottomNavBarItem(
@@ -61,7 +63,7 @@ class _BottomNavViewState extends State<BottomNavView> {
       ),
       PersistentBottomNavBarItem(
         inactiveColorPrimary: Colors.grey.shade600,
-        icon: Icon(
+        icon: const Icon(
           Icons.list,
         ),
         iconSize: 20,
@@ -73,8 +75,8 @@ class _BottomNavViewState extends State<BottomNavView> {
 
   @override
   void initState() {
+    ///Initial Passing index as 0
     _controller = PersistentTabController(initialIndex: 0);
-    // TODO: implement initState
     super.initState();
   }
 

@@ -3,6 +3,7 @@ import 'package:food_recipe_app/models/auto_complete.dart';
 
 
 
+///Search Page States
 enum Status { loading, initial, success }
 
 class SearchPageState extends Equatable {

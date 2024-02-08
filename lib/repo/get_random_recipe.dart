@@ -17,9 +17,10 @@ class GetRandomRecipe {
 
   final dio = Dio();
 
+  ///Network Calling to get random recipes from Spoonacular api
   Future<List<dynamic>> getRecipe() async {
     var infoUrl =
-        BASE_URL + RANDOM_RACIPE_PATH + '&apiKey=' + key;
+        '$BASE_URL$RANDOM_RACIPE_PATH&apiKey=$key';
     var id = '';
 
     Recipe racipeInfo;
@@ -39,14 +40,10 @@ class GetRandomRecipe {
     }
 
     var similarUrl =
-        BASE_URL + id + SIMILAR_PATH + '&apiKey=' + key;
-    var equipmentUrl = BASE_URL +
-        id +
-        EQUIPMENTS_PATH +
-        '&apiKey=' +
-        key;
+        '$BASE_URL$id$SIMILAR_PATH&apiKey=$key';
+    var equipmentUrl = '$BASE_URL$id$EQUIPMENTS_PATH&apiKey=$key';
     var nutritionUrl =
-        BASE_URL + id + NUTRITION_PATH + '&apiKey=' + key;
+        '$BASE_URL$id$NUTRITION_PATH&apiKey=$key';
 
     final response = await Future.wait([
       dio.get(similarUrl),

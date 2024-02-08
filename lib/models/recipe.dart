@@ -2,6 +2,7 @@ import 'package:food_recipe_app/models/analyzed_instructions.dart';
 
 import 'extended_ingredient.dart';
 
+///Recipe Model
 class Recipe {
   bool? vegetarian;
   bool? vegan;
@@ -115,7 +116,7 @@ class Recipe {
         analyzedInstructions: (json['analyzedInstructions'] as List<dynamic>?)
             ?.map((e) => AnalyzedInstruction.fromJson(e))
             .toList(),
-        originalId: json['originalId'] as dynamic?,
+        originalId: json['originalId'] as dynamic,
         spoonacularSourceUrl: json['spoonacularSourceUrl'] as String?,
       );
 
@@ -154,7 +155,7 @@ class Recipe {
         'occasions': occasions,
         'instructions': instructions,
         'analyzedInstructions':
-            analyzedInstructions?.map((e) => e!.toJson()).toList(),
+            analyzedInstructions?.map((e) => e.toJson()).toList(),
         'originalId': originalId,
         'spoonacularSourceUrl': spoonacularSourceUrl,
       };

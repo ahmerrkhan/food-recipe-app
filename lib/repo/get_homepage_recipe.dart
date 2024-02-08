@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:dio/dio.dart';
 import 'package:food_recipe_app/api/api_keys.dart';
 import 'package:food_recipe_app/models/failure.dart';
@@ -11,11 +10,9 @@ class GetHomeRecipes {
 
   final dio = Dio();
 
+  ///Network Calling to get recipes from Spoonacular api
   Future<FoodTypeList> getRecipes(String type, int no) async {
-    var url = BASE_URL +
-        "/random?number=$no&tags=$type" +
-        '&apiKey=' +
-        key;
+    var url = '$BASE_URL/random?number=$no&tags=$type&apiKey=$key';
     final response = await dio.get(url);
 
     if (response.statusCode == 200) {

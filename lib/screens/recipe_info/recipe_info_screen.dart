@@ -33,6 +33,7 @@ class _RecipeInfoState extends State<RecipeInfo> {
             if (state is RecipeInfoLoadState) {
               return const Center(child: LoadingWidget());
             } else if (state is RecipeInfoSuccesState) {
+              ///Displaying Recipe Info Widget
               return RacipeInfoWidget(
                 equipment: state.equipment,
                 info: state.recipe,
@@ -40,16 +41,13 @@ class _RecipeInfoState extends State<RecipeInfo> {
                 similarlist: state.similar,
               );
             } else if (state is RecipeInfoErrorState) {
-              return Center(
-                child: Container(
-                  child: Text("Error"),
-                ),
+              ///On Displaying Error
+              return const Center(
+                child: Text("Error"),
               );
             } else {
-              return Center(
-                child: Container(
-                  child: Text("Noting happingng"),
-                ),
+              return const Center(
+                child: Text("Nothing happens"),
               );
             }
           },

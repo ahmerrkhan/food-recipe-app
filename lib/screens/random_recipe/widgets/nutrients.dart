@@ -49,7 +49,7 @@ class NutrientsWidgets extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 )),
             ListTile(
-                contentPadding: EdgeInsets.all(10),
+                contentPadding: const EdgeInsets.all(10),
                 leading: Container(
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
@@ -74,9 +74,9 @@ class NutrientsWidgets extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 )),
             ListTile(
-                contentPadding: EdgeInsets.all(10),
+                contentPadding: const EdgeInsets.all(10),
                 leading: Container(
-                  padding: EdgeInsets.all(10),
+                  padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: Colors.grey[100],
                     shape: BoxShape.circle,
@@ -99,9 +99,9 @@ class NutrientsWidgets extends StatelessWidget {
                       fontWeight: FontWeight.bold),
                 )),
             ListTile(
-              contentPadding: EdgeInsets.all(10),
+              contentPadding: const EdgeInsets.all(10),
               leading: Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   color: Colors.grey[100],
                   shape: BoxShape.circle,
@@ -155,7 +155,7 @@ class NutrientsbadWidget extends StatelessWidget {
           items: [
             ...nutrient.bad.map((nutri) {
               return ListTile(
-                contentPadding: EdgeInsets.all(10),
+                contentPadding: const EdgeInsets.all(10),
                 subtitle: Text("${nutri.percentOfDailyNeeds}% of Daily needs."),
                 title: Text(
                   nutri.name.toString(),
@@ -210,7 +210,7 @@ class NutrientsgoodWidget extends StatelessWidget {
                 subtitle: Text("${nutri.percentOfDailyNeeds}% of Daily needs."),
                 title: Text(
                   nutri.name.toString(),
-                  style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
                 trailing: Text(
                   nutri.amount,

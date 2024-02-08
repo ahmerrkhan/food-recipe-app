@@ -2,6 +2,7 @@ import 'equipment.dart';
 import 'ingredient.dart';
 import 'length.dart';
 
+///Model for Step Widget
 class Step {
   int? number;
   String? step;
